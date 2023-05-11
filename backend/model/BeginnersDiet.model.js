@@ -1,5 +1,7 @@
 const mongoose = require("mongoose")
 
+
+
 const beginnersDietSchema = mongoose.Schema({
     title:{type:String, require:true},
     meal:{type:Array, require:true},
@@ -10,6 +12,8 @@ const beginnersDietSchema = mongoose.Schema({
 },{
     versionKey:false
 })
+
+
 
 const BeginnersDietModel = mongoose.model("beginnersDiet" ,beginnersDietSchema)
 
