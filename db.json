@@ -237,35 +237,35 @@
   "expertDiet":[
     {
       "title":"BreakFast",
-      "meal1" :["Sproute - 1 bowl" , "2-Banana" , "1-scoop-whey"],
+      "meal" :["Sproute - 1 bowl" , "2-Banana" , "1-scoop-whey"],
        "ProtienGain":30,
        "calories":250,
        "carbs":51
      },
      {
       "title":"Brunch",
-      "meal1" :["3- chapati" , "1-bowl-salad" , "1 bowl daal , 4-eggs"],
+      "meal" :["3- chapati" , "1-bowl-salad" , "1 bowl daal , 4-eggs"],
        "ProtienGain":50,
        "calories":600,
        "carbs":80
      },
      {
       "title":"Lunch",
-      "meal1" :["100gm rice" ,  "1-multivitamin-tab" , "1 bowl any veggies/2-egg,  150gm-chiken"],
+      "meal" :["100gm rice" ,  "1-multivitamin-tab" , "1 bowl any veggies/2-egg,  150gm-chiken"],
        "ProtienGain":80,
        "calories":650,
        "carbs":50
      },
      {
       "title":"Evening-Snacks",
-      "meal1" :["1-cup-green-tea/coffee" , "1-paneer-roll" ,"1-omlet"],
+      "meal" :["1-cup-green-tea/coffee" , "1-paneer-roll" ,"1-omlet"],
        "ProtienGain":20,
        "calories":120,
        "carbs":120
      },
      {
       "title":"Dinner",
-      "meal1" :["3-chappati" , "200gm-panner/chiken" , "1 bowl any veggies"],
+      "meal" :["3-chappati" , "200gm-panner/chiken" , "1 bowl any veggies"],
        "ProtienGain":35,
        "calories":600,
        "carbs":35
