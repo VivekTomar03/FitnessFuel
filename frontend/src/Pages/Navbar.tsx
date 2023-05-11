@@ -1,4 +1,5 @@
 import React from "react";
+import Homeui from "./Middle/Homeui";
 
 export default function Navbar() {
   return (
@@ -187,6 +188,7 @@ export default function Navbar() {
           </div>
         </div> */}
       </nav>
+      <Homeui />
     </div>
   );
 }
