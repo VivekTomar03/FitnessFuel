@@ -1,0 +1,277 @@
+{
+    "Users":[
+        {
+            "name":"dummy1",
+            "age":25,
+            "email":"dummy@gmail.com",
+            "password":"12345",
+            "weight":80,
+            "height":5.11,
+            "gender":"Male",
+            "exercise":[],
+            "diet":[]
+        }
+    ],
+     
+    "beginnerExe":[
+        {
+            "title":"DAY1",
+            "Targetbodypart":"Chest",
+            "exercise": ["benchpress - 4*10" , "pushups - 4*10", "inclinebenchpress- 4*10"],
+            "cardio" :"5min" ,
+            "image":"https://i.pinimg.com/474x/b7/5a/99/b75a9909d7193a13d1995849612066d7.jpg"
+        },
+          {
+            "title":"DAY2",
+            "Targetbodypart":"Back",
+            "exercise": ["latpulldown - 4*10" , "barbellrows - 4*10", "seatedrow- 4*10"],
+            "cardio" :"5min" ,
+            "image":"https://i.pinimg.com/474x/f8/3e/13/f83e13c154033e937ca2b36e5a9d566e.jpg"
+          },
+            {
+            "title":"DAY3",
+            "Targetbodypart":"Rest",
+            "exercise": ["https://www.benderfitness.com/wp-content/uploads/2014/09/20130715-222052.jpg"],
+            "cardio" :"0min" 
+           
+        },
+          {
+            "title":"DAY4",
+            "Targetbodypart":"shoulder",
+            "exercise": ["militarypress - 4*10" , "side-lateral-raise - 4*10", "front-raise- 4*10"],
+            "cardio" :"5min" ,
+            "image":"https://i.pinimg.com/474x/a5/39/b4/a539b49f3faab9fd51a3662720ced2f1.jpg"
+          },
+          {
+            "title":"DAY5",
+            "Targetbodypart":"legs",
+            "exercise": ["legspress - 4*10" , "squat - 4*10", "lunges- 4*10"],
+            "cardio" :"5min" ,
+            "image":"https://i.pinimg.com/474x/47/78/37/477837c64d2d172f9c28280eacc6808e.jpg"
+          },
+          {
+            "title":"DAY6",
+             "Targetbodypart":"Rest",
+            "exercise": ["https://www.benderfitness.com/wp-content/uploads/2014/09/20130715-222052.jpg"],
+            "cardio" :"0min" 
+            
+          }
+        
+        
+    ],
+
+    "expertExe":[
+            {
+            "title":"DAY1",
+            "Targetbodypart":"Chest",
+            "exercise": ["benchpress - 4*12-14" , "chestdips - 4*12-14", "declinebenchpress- 4*12-14"],
+            "cardio" :"10-15min" ,
+            "image":"https://i.pinimg.com/474x/b9/75/d4/b975d4c73d7bfd8d8bd5f06425552d5a.jpg"
+        },
+          {
+            "title":"DAY2",
+            "Targetbodypart":"Back",
+            "exercise": ["deadlift - 5*5" , "dumbbellrow - 3*10", "T-barrows- 3*10 , pulldown(underhand)-3*10"],
+            "cardio" :"5-10min" ,
+            "image":"https://i.pinimg.com/564x/f3/13/37/f3133763e08c9d4a8762171de472d1a1.jpg"
+          },
+            {
+            "title":"DAY3",
+            "Targetbodypart":"Abs",
+            
+            "exercise": ["crunches - 3*20" , "plank - 3*1-2min", "knee-to-elbow- 3*10 ,hanginglegraise -3*15"],
+             "cardio" :"5-10min" ,
+             "image":"https://i.pinimg.com/564x/69/9c/0c/699c0cfcd4875c1967e05c50efd3ab64.jpg"
+        },
+          {
+            "title":"DAY4",
+            "Targetbodypart":"shoulder",
+            "exercise": ["militarypress - 4*12-14" , "side-lateral-raise - 4*12-14", "front-raise- 4*12-14", "machinepress - 4*12-14"],
+            "cardio" :"5-10min" ,
+            "image":"https://i.pinimg.com/564x/e5/cb/68/e5cb68309c861fb8eabed5fe7dc8a803.jpg"
+          },
+          {
+            "title":"DAY5",
+            "Targetbodypart":"legs",
+            "exercise": ["legspress - 4*12-14" , "weighted-squat - 5*12-14", "lunges- 4*12-14", "one-leg-deadlift - 4*11-12" ] ,
+            "cardio" :"5min" ,
+            "image":"https://i.pinimg.com/564x/0d/71/51/0d71514cb7f914435aef2614cbdd8abf.jpg"
+          },
+          {
+            "title":"DAY6",
+             "Targetbodypart":"Bicep-tricep",
+            "exercise": ["incline-dubbell-curl - 4*12-14" , "chin-ups - 3*12-14" , "rope-pushsown - 4*12-14" , "dips - 4*12-14"],
+            "cardio" :"10-15min",
+            "image":"https://i.pinimg.com/474x/c9/92/da/c992da74de54973d53bdf811a8a0269c.jpg" 
+            
+          }
+    ],
+
+
+   "intermediateExe":[
+    {
+        "title":"DAY1",
+        "Targetbodypart":"Chest",
+        "exercise": ["pushups - 4*20","benchpress - 4*10" , "inclinebenchpress- 4*10","cablepecfly -4*10"],
+        "cardio" :"5-10min" ,
+        "image":"https://i.pinimg.com/474x/b7/5a/99/b75a9909d7193a13d1995849612066d7.jpg"
+    },
+      {
+        "title":"DAY2",
+        "Targetbodypart":"Back",
+        "exercise": ["pullups - 4*10"  ,"t-barrows - 4*10", "seatedrow- 4*10","dumbleshrugs - 4*10"],
+        "cardio" :"5-10min" ,
+        "image":"https://i.pinimg.com/474x/f8/3e/13/f83e13c154033e937ca2b36e5a9d566e.jpg"
+      },
+      {
+        "title":"DAY3",
+        "Targetbodypart":"Abs",
+        "exercise": ["crunches - 3*20" , "plank - 3*1-2min", "knee-to-elbow- 3*10 ,hanginglegraise -3*15"],
+         "cardio" :"5-10min" ,
+         "image":"https://i.pinimg.com/564x/69/9c/0c/699c0cfcd4875c1967e05c50efd3ab64.jpg"
+    },
+      {
+        "title":"DAY4",
+        "Targetbodypart":"shoulder",
+        "exercise": ["militarypress - 4*10" , "side-lateral-raise - 4*10", "front-raise- 4*10"],
+        "cardio" :"5-10min" ,
+        "image":"https://i.pinimg.com/474x/a5/39/b4/a539b49f3faab9fd51a3662720ced2f1.jpg"
+      },
+      {
+        "title":"DAY5",
+        "Targetbodypart":"legs",
+        "exercise": ["legspress - 4*10" , "weightedsquat - 4*10", "lunges- 4*10","hamstringcurl - 4*10"],
+        "cardio" :"5-10min" ,
+        "image":"https://i.pinimg.com/474x/47/78/37/477837c64d2d172f9c28280eacc6808e.jpg"
+      },
+      {
+        "title":"DAY6",
+        "Targetbodypart":"Bicep-tricep",
+         "exercise": ["incline-dubbell-curl - 4*12-14" , "chin-ups - 3*12-14" , "rope-pushsown - 4*12-14" , "dips - 4*12-14"],
+        "cardio" :"5-10min" ,
+        "image":"https://i.pinimg.com/474x/c9/92/da/c992da74de54973d53bdf811a8a0269c.jpg" 
+      }
+    
+    
+],
+
+
+ "beginnersDiet":[
+     {
+      "title":"BreakFast",
+      "meal1" :["Sproute - 1 bowl" , "2-Banana" , "1-WarmWater"],
+       "ProtienGain":5,
+       "calories":210,
+       "carbs":51
+     },
+     {
+      "title":"Brunch",
+      "meal1" :["2- chapati" , "1-bowl-salad" , "1/2 bowl daal"],
+       "ProtienGain":16,
+       "calories":340,
+       "carbs":58
+     },
+     {
+      "title":"Lunch",
+      "meal1" :["100gm rice" , "1-multivitamin-tab" , "1/2 bowl any veggies/2-egg"],
+       "ProtienGain":20,
+       "calories":180,
+       "carbs":30
+     },
+     {
+      "title":"Evening-Snacks",
+      "meal1" :["1-cup-green-tea/coffee" , "1-veggie-roll" ],
+       "ProtienGain":5,
+       "calories":100,
+       "carbs":120
+     },
+     {
+      "title":"Dinner",
+      "meal1" :["1-chappati" , "100gm-panner/chiken" , "1/2 bowl any veggies"],
+       "ProtienGain":35,
+       "calories":340,
+       "carbs":20
+     }
+
+ ],
+
+  "intermediateDiet":[
+    {
+      "title":"BreakFast",
+      "meal1" :["Sproute - 1 bowl" , "2-Banana" , "1-scoop-whey"],
+       "ProtienGain":30,
+       "calories":250,
+       "carbs":51
+     },
+     {
+      "title":"Brunch",
+      "meal1" :["2- chapati" , "1-bowl-salad" , "1 bowl daal , 2-eggs"],
+       "ProtienGain":32,
+       "calories":500,
+       "carbs":60
+     },
+     {
+      "title":"Lunch",
+      "meal1" :["100gm rice" , "1-multivitamin-tab" , "1 bowl any veggies, 2-egg"],
+       "ProtienGain":36,
+       "calories":250,
+       "carbs":50
+     },
+     {
+      "title":"Evening-Snacks",
+      "meal1" :["1-cup-green-tea/coffee" , "1-paneer-roll" ],
+       "ProtienGain":15,
+       "calories":100,
+       "carbs":120
+     },
+     {
+      "title":"Dinner",
+      "meal1" :["2-chappati" , "100gm-panner/chiken" , "1 bowl any veggies"],
+       "ProtienGain":35,
+       "calories":400,
+       "carbs":30
+     }
+
+  ],
+
+  "expertDiet":[
+    {
+      "title":"BreakFast",
+      "meal1" :["Sproute - 1 bowl" , "2-Banana" , "1-scoop-whey"],
+       "ProtienGain":30,
+       "calories":250,
+       "carbs":51
+     },
+     {
+      "title":"Brunch",
+      "meal1" :["3- chapati" , "1-bowl-salad" , "1 bowl daal , 4-eggs"],
+       "ProtienGain":50,
+       "calories":600,
+       "carbs":80
+     },
+     {
+      "title":"Lunch",
+      "meal1" :["100gm rice" ,  "1-multivitamin-tab" , "1 bowl any veggies/2-egg,  150gm-chiken"],
+       "ProtienGain":80,
+       "calories":650,
+       "carbs":50
+     },
+     {
+      "title":"Evening-Snacks",
+      "meal1" :["1-cup-green-tea/coffee" , "1-paneer-roll" ,"1-omlet"],
+       "ProtienGain":20,
+       "calories":120,
+       "carbs":120
+     },
+     {
+      "title":"Dinner",
+      "meal1" :["3-chappati" , "200gm-panner/chiken" , "1 bowl any veggies"],
+       "ProtienGain":35,
+       "calories":600,
+       "carbs":35
+     }
+  ]
+  
+
+}
+
