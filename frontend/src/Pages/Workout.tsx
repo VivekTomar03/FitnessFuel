@@ -40,7 +40,7 @@ export default function Workout() {
       food, qty
     }
     console.log(obj, "macrodata")
-    axios.get(`http://localhost:8080/macro?food=${food}&qty=${qty}`)
+    axios.get(`https://weary-ruby-coat.cyclic.app/macro?food=${food}&qty=${qty}`)
     .then((res) => setmacrores(res.data))
     .catch((err) => console.log(err))
   };
