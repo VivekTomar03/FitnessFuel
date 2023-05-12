@@ -10,8 +10,6 @@ import {
 } from "recharts";
 import { macroobj } from "./Workout";
 
-
-
 const COLORS = ["#ff6f00", "#00724a", "#ff0000", "#FF8042"];
 
 const Bullet = ({ backgroundColor, size }: any) => {
@@ -73,14 +71,14 @@ const CustomizedLegend = (props: any) => {
     </ul>
   );
 };
-export default function MacroChart({marcores}:any) {
+export default function MacroChart({ marcores, food }: any) {
   const data01 = [
-    { name: "Protine(0-15)", value:marcores.protine },
-    { name: "FAT(16-30)", value:marcores.fat},
+    { name: "Protine(0-15)", value: marcores.protine },
+    { name: "FAT(16-30)", value: marcores.fat },
     { name: "CARBS(30+)", value: marcores.carbs },
   ];
- console.log(marcores);
- 
+  console.log(marcores);
+
   return (
     <div style={{ width: "100%", height: 420 }}>
       <ResponsiveContainer>
@@ -90,8 +88,8 @@ export default function MacroChart({marcores}:any) {
             dataKey="value"
             cx={200}
             cy={200}
-            innerRadius={80}
-            outerRadius={100}
+            innerRadius={90}
+            outerRadius={110}
           >
             {data01.map((entry, index) => (
               <Cell
@@ -100,7 +98,7 @@ export default function MacroChart({marcores}:any) {
               />
             ))}
             <Label
-              content={<CustomLabel labelText="BMI" value={0} />}
+              content={<CustomLabel labelText="MACROS" value={food} />}
               position="center"
             />
           </Pie>

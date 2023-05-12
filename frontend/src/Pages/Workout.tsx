@@ -3,19 +3,19 @@ import SimWork from "./Middle/SimWork";
 import Bmichart from "./Bmichart";
 import MacroChart from "./MacroChart";
 import axios from "axios";
-export interface macroobj{
-  "title":string;
-  "protine":number,
-  
-  "carbs" :number ,
-  "fat":number
+export interface macroobj {
+  title: string;
+  protine: number;
+
+  carbs: number;
+  fat: number;
 }
 const initmacro = {
-  title:"",
-  protine:0,
-  fat:0,
-  carbs:0
-}
+  title: "",
+  protine: 0,
+  fat: 0,
+  carbs: 0,
+};
 export default function Workout() {
   const [height, setHeight] = useState<number>(0);
   const [weight, setWeight] = useState<number>(0);
@@ -23,7 +23,7 @@ export default function Workout() {
   //---
   const [food, setFood] = useState<string>("");
   const [qty, setQty] = useState<number>(1);
-  const [marcores , setmacrores] = useState<macroobj>(initmacro)
+  const [marcores, setmacrores] = useState<macroobj>(initmacro);
   const handlesubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     let h = +height * +height;
@@ -36,13 +36,15 @@ export default function Workout() {
   const handlemacros = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(food, qty);
-    let obj:any = {
-      food, qty
-    }
-    console.log(obj, "macrodata")
-    axios.get(`http://localhost:8080/macro?food=${food}&qty=${qty}`)
-    .then((res) => setmacrores(res.data))
-    .catch((err) => console.log(err))
+    let obj: any = {
+      food,
+      qty,
+    };
+    console.log(obj, "macrodata");
+    axios
+      .get(`https://weary-ruby-coat.cyclic.app/macro?food=${food}&qty=${qty}`)
+      .then((res) => setmacrores(res.data))
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -121,7 +123,7 @@ export default function Workout() {
           </div>
         </div>
         <div className="">
-          <Bmichart ybmi={ybmi}  />
+          <Bmichart ybmi={ybmi} />
         </div>
       </div>
       <hr />
@@ -138,7 +140,7 @@ export default function Workout() {
                   alt="Your Company"
                 />
                 <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-                MACRONUTRIENTS CALCULATOR
+                  MACRONUTRIENTS CALCULATOR
                 </h2>
               </div>
 
@@ -209,7 +211,7 @@ export default function Workout() {
           </div>
         </div>
         <div>
-          <MacroChart  marcores={marcores}/>
+          <MacroChart marcores={marcores} food={food} />
         </div>
       </div>
       <SimWork />
