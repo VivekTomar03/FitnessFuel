@@ -1,4 +1,5 @@
 import React from "react";
+import SimWork from "./SimWork";
 
 export default function SomePro() {
   let arr = [
@@ -96,10 +97,12 @@ export default function SomePro() {
         </div>
       </div>
 
-      <div className="w-3/6  flex ">
+      <div className="w-3/6 flex ">
         <img src="https://www.hussle.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fblog.5ca2768d.jpg&w=1920&q=75" />
         <img src="https://www.hussle.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpartnerships.81feecb8.jpg&w=1920&q=75" />
       </div>
+      <SimWork />
+
       <div className="w-5/6 mx-auto ">
         <p className="mb-8 mt-8">
           MyFitnessPal is one of the best weight loss apps and fitness apps,
