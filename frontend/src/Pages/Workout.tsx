@@ -9,7 +9,7 @@ export default function Workout() {
   const [ybmi, setYBmi] = useState<number>(0);
   //---
   const [food, setFood] = useState<string>("");
-  const [qty, setQty] = useState<number>(0);
+  const [qty, setQty] = useState<number>(1);
 
   const handlesubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -118,7 +118,7 @@ export default function Workout() {
                   alt="Your Company"
                 />
                 <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-                  MACROS CALCULATOR
+                MACRONUTRIENTS CALCULATOR
                 </h2>
               </div>
 
@@ -140,9 +140,9 @@ export default function Workout() {
                         <option>Select Foods</option>
                         <option value={"apple"}>Apple</option>
                         <option value={"banana"}>Banana</option>
-                        <option value={"carrot"}>Carrot</option>
-                        <option value={"almond"}>Almonde</option>
-                        <option value={"kiwi"}>Kiwi</option>
+                        <option value={"Egg"}>Egg</option>
+                        <option value={"darkchocolate"}>Dark Chocolate</option>
+                        <option value={"tofu"}>Tofu</option>
                         <option value={"chapati"}>Chapati</option>
                       </select>
                     </div>
