@@ -4,19 +4,43 @@ const DashBoard = () => {
   const [value, setValue] = useState<string>("");
   const [macro, setMacro] = useState<number>(0);
 
+  //   let obj1: any = {
+  //     exc: value,
+  //     diet: "beginnersdiet",
+  //   };
+  //   let obj2: any = {
+  //     exc: value,
+  //     diet: "intermediatediet",
+  //   };
+  //   let obj3: any = {
+  //     exc: value,
+  //     diet: "expertdiet",
+  //   };
+  //   //   let anc: any = localStorage.getItem("dietplan" || null);
+  //   console.log(JSON.parse(anc));
   useEffect(() => {
-    if (value === "begginers") {
+    if (value === "beginners") {
       setMacro(1800);
+      //   let a = JSON.stringify(obj1);
+      localStorage.setItem("exeplan", value);
+      localStorage.setItem("dietplan", "beginnersdiet");
     }
-    if (value == "intermediate") {
+    if (value === "intermediate") {
       setMacro(2500);
+      localStorage.setItem("exeplan", value);
+
+      localStorage.setItem("dietplan", "intermediatediet");
     }
-    if (value == "expert") {
+    if (value === "expert") {
       setMacro(3000);
+      localStorage.setItem("exeplan", value);
+
+      localStorage.setItem("dietplan", "expertdiet");
     }
   }, [value]);
 
   //   console.log(value);
+
   return (
     <div>
       <img
@@ -45,9 +69,9 @@ const DashBoard = () => {
             className="border-2 border-black-500 py-2 px-8"
           >
             <option value="">Choose Option</option>
-            <option value="begginers">Begginers</option>
+            <option value="beginners">Begginers</option>
             <option value="intermediate">Intermediate</option>
-            <option value="expert">expert</option>
+            <option value="expert">Expert</option>
           </select>
         </div>
         <div style={{ margin: "20px" }}>
