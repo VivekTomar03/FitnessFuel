@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Login from "../../Pages/Login";
@@ -16,6 +17,7 @@ function Allroutes() {
         <Route path="*" element={<PageNotF />}></Route>
         <Route path="/workout" element={<Workout />}></Route>
       </Routes>
+
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import logo from "../image/logo 3.png"
+import axios from 'axios';
 
 interface exer {
     "title":string;
@@ -10,50 +11,50 @@ interface exer {
 }
 
 interface userdetails {
-    Email:string;
-    Password:string;
-    Name:string;
-    Age:number;
-    mobile:number;
+    email:string;
+    password:string;
+    name:string;
+    age:number;
     height:number;
     weight:number;
     exercise:exer[];
     diet:exer[]
 }
 
+let obj ={
+  email:"",
+  password:"",
+  name:"",
+  age:0,
+  height:0,
+  weight:0,
+  exercise:[],
+  diet:[]
+}
+
 function Signup() {
-const [data,setData]=useState<userdetails>({
-    Email:"",
-    Password:"",
-    Name:"",
-    Age:0,
-    mobile:0,
-    height:0,
-    weight:0,
-    exercise:[],
-    diet:[]
-})
+const [data,setData]=useState<userdetails>(obj)
 
 const handleChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
-    const name=e.target.name
-    const value=e.target.value
-    setData((prev)=>({...prev,[name]:value}))
+  const { name, value,type } = e.target;
+  const val = type == "number" ? +value : value;
+  // console.log(name,value)
+  setData({ ...data, [name]: val });
 }
 
 const handleSubmit=(e:React.FormEvent<HTMLFormElement>)=>{
     e.preventDefault()
+    const {email,password,name,age,height,weight,exercise,diet} = data
+    if(!email || !password || !name || !age  || !exercise || !height || !weight || !diet){
+      alert("All fields are required")
+    }
     console.log(data)
-    setData({ Email:"",
-    Password:"",
-    Name:"",
-    Age:0,
-    mobile:0,
-    height:0,
-    weight:0,
-    exercise:[],
-    diet:[]
+   axios
+   .post("https://weary-ruby-coat.cyclic.app/user/register",data)
+   .then((res)=>{console.log(res.data.msg)})
+   .catch((err)=>{console.log("User Already exist")})
 
-})
+   setData(obj)
 }
 
   return (
@@ -70,39 +71,39 @@ const handleSubmit=(e:React.FormEvent<HTMLFormElement>)=>{
       <div>
         <label  className="block text-sm font-semibold leading-6 text-black-900">Name</label>
         <div className="mt-2.5">
-          <input type="text" name="Name" id="first-name" value={data.Name} onChange={handleChange}  className="block w-full rounded-md border-0 px-3.5 py-2 text-black-900 shadow-sm ring-1 ring-inset ring-black-300 placeholder:text-black-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
+          <input type="text" name="name" id="first-name" value={data.name} onChange={handleChange}  className="block w-full rounded-md border-0 px-3.5 py-2 text-black-900 shadow-sm ring-1 ring-inset ring-black-300 placeholder:text-black-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
         </div>
       </div>
       <div className="sm:col-span-2 mt-3">
         <label  className="block text-sm font-semibold leading-6 text-black-900">Email</label>
         <div className="mt-2.5">
-          <input type="email" name="Email" id="email" value={data.Email} onChange={handleChange}  className="block w-full rounded-md border-0 px-3.5 py-2 text-black-900 shadow-sm ring-1 ring-inset ring-black-300 placeholder:text-black-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
+          <input type="email" name="email" id="email" value={data.email} onChange={handleChange}  className="block w-full rounded-md border-0 px-3.5 py-2 text-black-900 shadow-sm ring-1 ring-inset ring-black-300 placeholder:text-black-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
         </div>
       </div>
       <div className="sm:col-span-2 mt-3">
         <label  className="block text-sm font-semibold leading-6 text-black-900">Password</label>
         <div className="mt-2.5">
-          <input type="paswword" name="Password" id="password"  value={data.Password} onChange={handleChange} className="block w-full rounded-md border-0 px-3.5 py-2 text-black-900 shadow-sm ring-1 ring-inset ring-black-300 placeholder:text-black-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
+          <input type="paswword" name="password" id="password"  value={data.password} onChange={handleChange} className="block w-full rounded-md border-0 px-3.5 py-2 text-black-900 shadow-sm ring-1 ring-inset ring-black-300 placeholder:text-black-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
         </div>
       </div>
-      <div className="sm:col-span-2 mt-3">
+      {/* <div className="sm:col-span-2 mt-3">
         <label  className="block text-sm font-semibold leading-6 text-black-900">Phone number</label>
         <div className="relative mt-2.5">
           
-          <input type="Number" name="mobile" id="phone-number" value={data.mobile} onChange={handleChange} className="block w-full  rounded-md border-0 px-3.5 py-2  text-black-900 shadow-sm ring-1 ring-inset ring-black-300 placeholder:text-black-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
+          <input type="number" name="mobile" id="phone-number" value={data.mobile} onChange={handleChange} className="block w-full  rounded-md border-0 px-3.5 py-2  text-black-900 shadow-sm ring-1 ring-inset ring-black-300 placeholder:text-black-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
         </div>
-      </div>
+      </div> */}
       <div className="sm:col-span-2 mt-3">
         <label  className="block text-sm font-semibold leading-6 text-black-900">Age</label>
         <div className="mt-2.5">
-        <input type="Number" name="Age" id="age" value={data.Age} onChange={handleChange} className="block w-full  rounded-md border-0 px-3.5 py-2  text-black-900 shadow-sm ring-1 ring-inset ring-black-300 placeholder:text-black-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
+        <input type="number" name="age" id="age" value={data.age} onChange={handleChange} className="block w-full  rounded-md border-0 px-3.5 py-2  text-black-900 shadow-sm ring-1 ring-inset ring-black-300 placeholder:text-black-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
         </div>
       </div>
       <div  className="grid grid-cols-1 gap-x-8 gap-y-6 mt-3 sm:grid-cols-2">
       <div>
         <label  className="block text-sm font-semibold leading-6 text-gray-900">Weight</label>
         <div className="mt-2.5">
-          <input type="Number" name="weight" id="weight" value={data.weight} onChange={handleChange} className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
+          <input type="number" name="weight" id="weight" value={data.weight} onChange={handleChange} className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
         </div>
       </div>
       <div>
