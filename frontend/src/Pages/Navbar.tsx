@@ -14,7 +14,7 @@ export default function Navbar() {
                 aria-controls="mobile-menu"
                 aria-expanded="false"
               >
-                <span className="sr-only">Open main menu</span>
+                {/* <span className="sr-only">Open main menu</span> */}
 
                 <svg
                   className="block h-6 w-6"
@@ -67,7 +67,7 @@ export default function Navbar() {
               <div className="hidden sm:ml-6 sm:block">
                 <div className="flex space-x-4">
                   <a
-                    href="#"
+                    href="/dashboard"
                     className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
                     aria-current="page"
                   >

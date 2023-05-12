@@ -5,6 +5,7 @@ import Signup from "../../Pages/Signup";
 import Homeui from "../../Pages/Middle/Homeui";
 import PageNotF from "../../Pages/PageNotF";
 import Workout from "../../Pages/Workout";
+import DashBoard from "../../Pages/Dashboard";
 
 function Allroutes() {
   return (
@@ -15,6 +16,7 @@ function Allroutes() {
         <Route path="/signup" element={<Signup />} />
         <Route path="*" element={<PageNotF />}></Route>
         <Route path="/workout" element={<Workout />}></Route>
+        <Route path="/dashboard" element={<DashBoard />}></Route>
       </Routes>
     </div>
   );
