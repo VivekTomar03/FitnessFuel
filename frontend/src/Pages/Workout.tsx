@@ -2,7 +2,20 @@ import React, { useState } from "react";
 import SimWork from "./Middle/SimWork";
 import Bmichart from "./Bmichart";
 import MacroChart from "./MacroChart";
-
+import axios from "axios";
+export interface macroobj{
+  "title":string;
+  "protine":number,
+  
+  "carbs" :number ,
+  "fat":number
+}
+const initmacro = {
+  title:"",
+  protine:0,
+  fat:0,
+  carbs:0
+}
 export default function Workout() {
   const [height, setHeight] = useState<number>(0);
   const [weight, setWeight] = useState<number>(0);
@@ -10,7 +23,7 @@ export default function Workout() {
   //---
   const [food, setFood] = useState<string>("");
   const [qty, setQty] = useState<number>(1);
-
+  const [marcores , setmacrores] = useState<macroobj>(initmacro)
   const handlesubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     let h = +height * +height;
@@ -23,6 +36,13 @@ export default function Workout() {
   const handlemacros = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(food, qty);
+    let obj:any = {
+      food, qty
+    }
+    console.log(obj, "macrodata")
+    axios.get(`http://localhost:8080/macro?food=${food}&qty=${qty}`)
+    .then((res) => setmacrores(res.data))
+    .catch((err) => console.log(err))
   };
 
   return (
@@ -101,7 +121,7 @@ export default function Workout() {
           </div>
         </div>
         <div className="">
-          <Bmichart ybmi={ybmi} height={height} weight={weight} />
+          <Bmichart ybmi={ybmi}  />
         </div>
       </div>
       <hr />
@@ -140,7 +160,7 @@ export default function Workout() {
                         <option>Select Foods</option>
                         <option value={"apple"}>Apple</option>
                         <option value={"banana"}>Banana</option>
-                        <option value={"Egg"}>Egg</option>
+                        <option value={"egg"}>Egg</option>
                         <option value={"darkchocolate"}>Dark Chocolate</option>
                         <option value={"tofu"}>Tofu</option>
                         <option value={"chapati"}>Chapati</option>
@@ -189,10 +209,9 @@ export default function Workout() {
           </div>
         </div>
         <div>
-          <MacroChart />
+          <MacroChart  marcores={marcores}/>
         </div>
       </div>
-
       <SimWork />
     </div>
   );

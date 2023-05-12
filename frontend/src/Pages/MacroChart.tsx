@@ -8,12 +8,9 @@ import {
   ResponsiveContainer,
   Label,
 } from "recharts";
+import { macroobj } from "./Workout";
 
-const data01 = [
-  { name: "Under Weight(0-15)", value: 15 },
-  { name: "Normal Wieght(16-30)", value: 30 },
-  { name: "Over Weight(30+)", value: 50 },
-];
+
 
 const COLORS = ["#ff6f00", "#00724a", "#ff0000", "#FF8042"];
 
@@ -76,7 +73,14 @@ const CustomizedLegend = (props: any) => {
     </ul>
   );
 };
-export default function MacroChart() {
+export default function MacroChart({marcores}:any) {
+  const data01 = [
+    { name: "Protine(0-15)", value:marcores.protine },
+    { name: "FAT(16-30)", value:marcores.fat},
+    { name: "CARBS(30+)", value: marcores.carbs },
+  ];
+ console.log(marcores);
+ 
   return (
     <div style={{ width: "100%", height: 420 }}>
       <ResponsiveContainer>
