@@ -40,7 +40,11 @@ const DashBoard = () => {
   }, [value]);
 
   //   console.log(value);
-
+  const stats = [
+    { id: 1, name: "Transactions every 24 hours", value: "44 million" },
+    { id: 2, name: "Assets under holding", value: "$119 trillion" },
+    { id: 3, name: "New users annually", value: "46,000" },
+  ];
   return (
     <div>
       <img
@@ -48,12 +52,16 @@ const DashBoard = () => {
         alt=""
         width="100%"
       />
-      <div className="flex justify-center gap-20px border-4 border-teal-600 border-solid w-fit m-auto mb-8">
+      <div
+        className="flex justify-center gap-20px border-4 border-teal-600 border-solid w-fit m-auto mb-8 
+          bg-[url('https://thumbs.dreamstime.com/b/athletic-man-training-biceps-gym-to-use-as-banner-athletic-muscular-man-training-biceps-dumbbells-gym-to-use-as-118413845.jpg')]"
+      >
         <div
           style={{
             border: "2px solid red",
             padding: "20px",
             margin: "10px",
+            color: "white",
           }}
         >
           <p style={{ fontSize: "30px" }}>Macros Count</p>
@@ -85,8 +93,7 @@ const DashBoard = () => {
               backgroundColor: "#424242",
             }}
           >
-            {" "}
-            See Your Diet Plan
+            <a href="/dietplan">See Your Diet Plan</a>
           </button>
           <button
             style={{
@@ -102,6 +109,27 @@ const DashBoard = () => {
           </button>
         </div>
       </div>
+      <div className="bg-white py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
+            {stats.map((stat) => (
+              <div
+                key={stat.id}
+                className="mx-auto flex max-w-xs flex-col gap-y-4"
+              >
+                <dt className="text-base leading-7 text-gray-600">
+                  {stat.name}
+                </dt>
+                <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+                  {stat.value}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </div>
+
+      <img src="https://thumbs.dreamstime.com/b/athletic-man-training-biceps-gym-to-use-as-banner-athletic-muscular-man-training-biceps-dumbbells-gym-to-use-as-118413845.jpg" />
     </div>
   );
 };
