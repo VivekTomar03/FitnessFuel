@@ -45,6 +45,7 @@ export default function Workout() {
       .get(`https://weary-ruby-coat.cyclic.app/macro?food=${food}&qty=${qty}`)
       .then((res) => setmacrores(res.data))
       .catch((err) => console.log(err));
+
   };
 
   return (

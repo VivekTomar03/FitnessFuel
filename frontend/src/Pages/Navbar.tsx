@@ -2,6 +2,7 @@ import React from "react";
 import Homeui from "./Middle/Homeui";
 
 export default function Navbar() {
+  const name = localStorage.getItem("name")
   return (
     <div>
       <nav className="bg-gray-800">
@@ -94,18 +95,19 @@ export default function Navbar() {
                   >
                     <span className="sr-only">Open user menu</span>
                     <img
-                      className="h-8 w-8 rounded-full"
-                      src="https://www.freeiconspng.com/thumbs/login-icon/user-login-icon-14.png"
+                      className="h-9 w-9 rounded-full ml-4"
+                      src="https://i.pinimg.com/474x/d8/0d/d2/d80dd2f38a99249677afa2cb58757992.jpg"
                       alt=""
                     />
                   </button>
-                  <span className="text-sky-400">faizan@gmail.com</span>
+                  <span className="text-sky-400 mr-4">{name}</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </nav>
+
     </div>
   );
 }

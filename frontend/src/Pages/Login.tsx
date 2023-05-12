@@ -1,17 +1,41 @@
 import React, { useState } from 'react'
 import logo from "../image/logo 3.png"
 import {Link } from "react-router-dom"
+import axios from 'axios';
+interface userdetails{
+  email: string,
+  password: string
+}
 
-
+const obj = {
+  email: '',
+  password: ''
+};
 function Login() {
 
-const [email,setEmail]=useState<string>("")
-const [password,setPasword]=useState<string>("")
+// const [email,setEmail]=useState<string>("")
+// const [password,setPasword]=useState<string>("")
+const [formData, setFormData] = useState<userdetails>(obj);
 
+const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+  const { name, value } = e.target;
+  // console.log(name,value)
+  setFormData({ ...formData, [name]: value });
+};
 
 const handleSubmit=(e:React.FormEvent<HTMLFormElement> )=>{
     e.preventDefault()
-    console.log(email,password)
+    axios
+    .post(`https://weary-ruby-coat.cyclic.app/user/login`,formData)
+    .then((res) => {
+      localStorage.setItem('token', res.data.token);
+      localStorage.setItem('name', res.data.name);
+      alert(res.data.msg);
+    })
+    .catch((err) => alert("Wrong Credentials"));
+
+  console.log(formData);
+  setFormData(obj);
 }
 
   return (
@@ -31,7 +55,7 @@ const handleSubmit=(e:React.FormEvent<HTMLFormElement> )=>{
           </div>
         </div>
         <div className="mt-2">
-          <input id="email" name="email" type="email" value={email} onChange={(e:React.ChangeEvent<HTMLInputElement>)=>setEmail(e.target.value)}  required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
+          <input id="email" name="email" type="email" value={formData.email} onChange={handleChange}  required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
         </div>
       </div>
       <div>
@@ -41,7 +65,7 @@ const handleSubmit=(e:React.FormEvent<HTMLFormElement> )=>{
           </div>
         </div>
         <div className="mt-2">
-          <input id="password" name="password" value={password} onChange={(e:React.ChangeEvent<HTMLInputElement>)=>setPasword(e.target.value)} type="password"  required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
+          <input id="password" name="password" value={formData.password} onChange={handleChange} type="password"  required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
         </div>
       </div>
 
