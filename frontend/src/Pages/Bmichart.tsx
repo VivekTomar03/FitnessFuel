@@ -8,11 +8,7 @@ import {
   ResponsiveContainer,
   Label,
 } from "recharts";
-// import moment from "moment";
 
-// console.log(
-//   moment(1612390027112).startOf("minute").add(1, "minutes").toISOString()
-// );
 const data01 = [
   { name: "Under Weight(0-15)", value: 15 },
   { name: "Normal Wieght(16-30)", value: 30 },
@@ -80,14 +76,8 @@ const CustomizedLegend = (props: any) => {
     </ul>
   );
 };
-export default function Bmichart({ height, weight, ybmi }: any) {
-  //   console.log(height);
-  //   useEffect(() => {
-  //     let h = +height * +height;
-  //     h = h * 0.304 * 0.304;
-  //     let bmi = +weight / h;
-  //     setYBmi(bmi);
-  //   }, [ybmi]);
+export default function Bmichart({  ybmi }: any) {
+  
   console.log(ybmi);
   return (
     <div style={{ width: "100%", height: 420 }}>

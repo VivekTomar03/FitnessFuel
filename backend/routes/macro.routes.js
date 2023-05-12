@@ -5,14 +5,15 @@ const macroRouter = express.Router()
 
 
 macroRouter.get("/" , async(req,res) => {
-    const {food, qty} = req.body
+    const {food, qty} = req.query
+    // console.log(food, qty)
       try {
-        const data = await MacroModel.findOne({title:food})
+        const data = await MacroModel.find({title:food})
+        // console.log(data)
          res.send({
-           
-            protine:data.protine*qty,
-            carbs:data.carbs*qty,
-            fat:data.fat*qty
+            protine:data[0].protine*qty,
+            carbs:data[0].carbs*qty,
+            fat:data[0].fat*qty
          })
       } catch (error) {
         res.send({
