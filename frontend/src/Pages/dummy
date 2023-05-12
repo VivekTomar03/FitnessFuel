@@ -1,0 +1,6 @@
+## Telwind media query-->>
+
+<div class="grid grid-cols-4 md:grid-cols-2">
+  <div>01</div>
+  <div>2</div>
+</div>
