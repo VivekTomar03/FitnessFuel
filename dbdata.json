@@ -1,37 +1,38 @@
 [
-    {
-      "title":"BreakFast",
-      "meal" :["Sproute - 1 bowl" , "2-Banana" , "1-scoop-whey"],
-       "ProtienGain":30,
-       "calories":250,
-       "carbs":51
-     },
-     {
-      "title":"Brunch",
-      "meal" :["3- chapati" , "1-bowl-salad" , "1 bowl daal , 4-eggs"],
-       "ProtienGain":50,
-       "calories":600,
-       "carbs":80
-     },
-     {
-      "title":"Lunch",
-      "meal" :["100gm rice" ,  "1-multivitamin-tab" , "1 bowl any veggies/2-egg,  150gm-chiken"],
-       "ProtienGain":80,
-       "calories":650,
-       "carbs":50
-     },
-     {
-      "title":"Evening-Snacks",
-      "meal" :["1-cup-green-tea/coffee" , "1-paneer-roll" ,"1-omlet"],
-       "ProtienGain":20,
-       "calories":120,
-       "carbs":120
-     },
-     {
-      "title":"Dinner",
-      "meal" :["3-chappati" , "200gm-panner/chiken" , "1 bowl any veggies"],
-       "ProtienGain":35,
-       "calories":600,
-       "carbs":35
-     }
-  ]
+  {
+   "title":"apple",
+   "protine":0.27,
+   "carbs":14.36,
+   "fat":0.18
+  },
+  {
+   "title":"bannana",
+   "protine":1.85,
+   "carbs":38.85,
+   "fat":0.56
+  },
+  {
+   "title":"egg",
+   "protine":6.29,
+   "carbs":0,
+   "fat":4.97
+  },
+  {
+   "title":"darkchocolate",
+   "protine":1.57,
+   "carbs":16.84,
+   "fat":9.94
+  },
+  {
+   "title":"tofu",
+   "protine":7.82,
+   "carbs":2.27,
+   "fat":3.96
+  },
+  {
+   "title":"chapati",
+   "protine":1.29,
+   "carbs":5.28,
+   "fat":4.97
+  }
+]
