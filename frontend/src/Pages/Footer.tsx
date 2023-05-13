@@ -1,7 +1,7 @@
 import React from "react";
-import {BsFacebook,BsInstagram}  from 'react-icons/bs'
-import {MdEmail} from "react-icons/md"
-import {FaInstagramSquare} from "react-icons/fa"
+// import {BsFacebook,BsInstagram}  from 'react-icons/bs'
+// import {MdEmail} from "react-icons/md"
+// import {FaInstagramSquare} from "react-icons/fa"
 export default function Footer() {
   return (
     <div>
@@ -173,25 +173,25 @@ export default function Footer() {
                   href=""
                   className="w-8 h-8  text-center py-1   hover:bg-blue-600 hover:border-blue-600"
                 >
-                  <BsFacebook size="30px"/>
+                  {/* <BsFacebook size="30px"/> */}
                 </a>
                 <a
                   href=""
                   className="w-8 h-8  text-center py-1   hover:bg-blue-600 hover:border-blue-600"
                 >
-                  <MdEmail size="30px"/>
+                  {/* <MdEmail size="30px"/> */}
                 </a>
                 <a
                   href=""
                   className="w-8 h-8  text-center py-1   hover:bg-blue-600 hover:border-blue-600"
                 >
-                  <BsInstagram/>
+                  {/* <BsInstagram/> */}
                 </a>
                 <a
                   href=""
                   className="w-8 h-8  text-center py-1   hover:bg-blue-600 hover:border-blue-600"
                 >
-                  <BsInstagram/>
+                  {/* <BsInstagram/> */}
                 </a>
               </div>
             </div>

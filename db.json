@@ -198,35 +198,35 @@
   "intermediateDiet":[
     {
       "title":"BreakFast",
-      "meal1" :["Sproute - 1 bowl" , "2-Banana" , "1-scoop-whey"],
+      "meal" :["Sproute - 1 bowl" , "2-Banana" , "1-scoop-whey"],
        "ProtienGain":30,
        "calories":250,
        "carbs":51
      },
      {
       "title":"Brunch",
-      "meal1" :["2- chapati" , "1-bowl-salad" , "1 bowl daal , 2-eggs"],
+      "meal" :["2- chapati" , "1-bowl-salad" , "1 bowl daal , 2-eggs"],
        "ProtienGain":32,
        "calories":500,
        "carbs":60
      },
      {
       "title":"Lunch",
-      "meal1" :["100gm rice" , "1-multivitamin-tab" , "1 bowl any veggies, 2-egg"],
+      "meal" :["100gm rice" , "1-multivitamin-tab" , "1 bowl any veggies, 2-egg"],
        "ProtienGain":36,
        "calories":250,
        "carbs":50
      },
      {
       "title":"Evening-Snacks",
-      "meal1" :["1-cup-green-tea/coffee" , "1-paneer-roll" ],
+      "meal" :["1-cup-green-tea/coffee" , "1-paneer-roll" ],
        "ProtienGain":15,
        "calories":100,
        "carbs":120
      },
      {
       "title":"Dinner",
-      "meal1" :["2-chappati" , "100gm-panner/chiken" , "1 bowl any veggies"],
+      "meal" :["2-chappati" , "100gm-panner/chiken" , "1 bowl any veggies"],
        "ProtienGain":35,
        "calories":400,
        "carbs":30

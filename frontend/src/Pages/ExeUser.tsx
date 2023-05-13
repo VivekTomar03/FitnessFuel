@@ -6,7 +6,7 @@ const ExeUser = () => {
   const [data, setData] = useState([]);
   let exeplan = localStorage.getItem("exeplan");
   console.log(exeplan);
-  let url = "https://weary-ruby-coat.cyclic.app";   //dharmik
+  let url = "https://impossible-seal-coat.cyclic.app";   //dharmik
   useEffect(() => {
     setLoading(true);
 

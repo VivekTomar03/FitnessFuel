@@ -1,36 +1,64 @@
 import React, { useState, useEffect } from "react";
 import logo from "../image/logo 2.png";
-let data: any = localStorage.getItem("macros");
-let valadd: any = localStorage.getItem("value");
+import axios from "axios";
+import { Link } from "react-router-dom";
+let data:any = localStorage.getItem("macros")
+let valadd:any =  localStorage.getItem("value")
+let id:any = localStorage.getItem("id") 
+let token = localStorage.getItem("token")
+let myplan = localStorage.getItem("plan")
 const DashBoard = () => {
-  const [value, setValue] = useState<string>("Choose Option");
+  let dietdat = myplan==undefined?"Begginners":myplan
+  
+  const [value, setValue] = useState<string>(dietdat);
   const [macro, setMacro] = useState<number>(+data || 0);
-
+  
+ 
   useEffect(() => {
     // setValue(valadd|| "")
-    if (value === "beginners") {
+    if (value == "beginners") {
+      console.log("insdie if condition")
       setMacro(1800);
-      localStorage.setItem("macros", "1800");
+      localStorage.setItem("macros", "1800")
       localStorage.setItem("exeplan", value);
-      localStorage.setItem("dietplan", "beginnersdiet");
-      localStorage.setItem("value", "Begginners");
+      localStorage.setItem("dietplan", value+"diet");
+      localStorage.setItem("value", "Begginners")
     }
     if (value === "intermediate") {
       setMacro(2500);
       localStorage.setItem("exeplan", value);
-      localStorage.setItem("macros", "2500");
-      localStorage.setItem("dietplan", "intermediatediet");
-      localStorage.setItem("value", "Intermediate");
+      localStorage.setItem("macros", "2500")
+      localStorage.setItem("dietplan", value+"diet");
+      localStorage.setItem("value", "Intermediate")
+
     }
     if (value === "expert") {
       setMacro(3000);
       localStorage.setItem("exeplan", value);
-      localStorage.setItem("macros", "3000");
-      localStorage.setItem("dietplan", "expertdiet");
-      localStorage.setItem("value", "Expert");
+      localStorage.setItem("macros", "3000")
+      localStorage.setItem("dietplan", value+"diet");
+      localStorage.setItem("value", "Expert")
+      
     }
-  }, [value]);
+     localStorage.setItem("plan", value)
 
+
+  }, [value, myplan]);
+
+    useEffect(()=> {
+      handleupdateplan() 
+    },[value])
+    const handleupdateplan = ()=> {
+      axios(`https://impossible-seal-coat.cyclic.app/user/update/${id}`, {    //update api req
+         method:"patch",
+         headers:{
+            "Content-Type":"application/json",
+            "Authorization": `Bearer ${token}`
+         },
+         data:{diet:[value]}
+       }).then((res) => console.log(res))
+         .catch((err) => console.log(err))
+     }
   //   console.log(value);
   const stats = [
     { id: 1, name: "Transactions every 24 hours", value: "44 million" },
@@ -40,13 +68,12 @@ const DashBoard = () => {
   return (
     <div>
       <img
-        style={{ marginTop: "3px" }}
         src="https://github.com/VivekTomar03/FitnessFuel/assets/106812942/33161022-63c8-4e7f-98d2-b0ce6dd1716a"
         alt=""
         width="100%"
       />
       <div
-        className="grid grid-cols-1 md:grid-cols-3 justify-center gap-20px border-4 border-teal-600 border-solid w-fit m-auto mb-8 
+        className="flex justify-center gap-20px border-4 border-teal-600 border-solid w-fit m-auto mb-8 
           bg-[url('https://thumbs.dreamstime.com/b/athletic-man-training-biceps-gym-to-use-as-banner-athletic-muscular-man-training-biceps-dumbbells-gym-to-use-as-118413845.jpg')]"
       >
         <div
@@ -65,11 +92,11 @@ const DashBoard = () => {
             name=""
             id=""
             style={{ marginTop: "20px" }}
-            onChange={(e: any) => setValue(e.target.value)}
+            onChange={(e: any) => setValue(  e.target.value)}
             // value={value}
             className="border-2 border-black-500 py-2 px-8"
           >
-            <option value="">{valadd || value} </option>
+            <option value=""> {value} </option>
             <option value="beginners">Begginers</option>
             <option value="intermediate">Intermediate</option>
             <option value="expert">Expert</option>
@@ -85,8 +112,9 @@ const DashBoard = () => {
               color: "white",
               backgroundColor: "#424242",
             }}
+             disabled={valadd?false:true}
           >
-            <a href="/dietplan">See Your Diet Plan</a>
+            <Link to="/dietplan">See Your Diet Plan</Link>
           </button>
           <button
             style={{
@@ -98,7 +126,7 @@ const DashBoard = () => {
               backgroundColor: "#424242",
             }}
           >
-            <a href="/exeplan"> See Your Exercise Schedule</a>
+           <Link to="/exeplan"> See Your Exercise Schedule</Link>
           </button>
         </div>
       </div>
