@@ -102,7 +102,7 @@ const DashBoard = () => {
               backgroundColor: "#424242",
             }}
           >
-            See Your Exercise Schedule
+           <a href="/exeplan"> See Your Exercise Schedule</a>
           </button>
         </div>
       </div>
