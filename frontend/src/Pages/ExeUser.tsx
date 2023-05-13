@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-export default function DietPlan() {
+const ExeUser = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [data, setData] = useState([]);
-  let dietplan = localStorage.getItem("dietplan");
-  console.log(dietplan);
-  let url ="https://weary-ruby-coat.cyclic.app"
+  let exeplan = localStorage.getItem("exeplan");
+  console.log(exeplan);
+  let url = "http://localhost:8080";
   useEffect(() => {
     setLoading(true);
 
     axios
-      .get(`${url}/${dietplan}`)
+      .get(`${url}/${exeplan}`)
       .then((res) => {
         console.log(res.data);
         setData(res.data);
@@ -21,7 +21,7 @@ export default function DietPlan() {
         console.log(err);
         setLoading(false);
       });
-  }, [dietplan]);
+  }, [exeplan]);
 
   if (loading) {
     return (
@@ -61,68 +61,49 @@ export default function DietPlan() {
       <div>
         <h1 className="text-6xl m-5">
           Diet For{" "}
-          {dietplan == "beginnersdiet"
+          {exeplan == "beginners"
             ? "Beginners"
-            : dietplan == "intermediatediet"
+            : exeplan == "intermediate"
             ? "Intermediate"
             : "Expert"}
         </h1>
-        <div className="flex flex-col">
-          <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
-            <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-              <div className="overflow-hidden">
-                <table className="min-w-full text-center text-sm font-light">
-                  <thead className="border-b font-medium dark:border-neutral-500">
-                    <tr>
-                      <th scope="col" className="px-6 py-4">
-                        Title
-                      </th>
-                      <th scope="col" className="px-6 py-4">
-                        ProtienGain
-                      </th>
-                      <th scope="col" className="px-6 py-4">
-                        Carbs
-                      </th>
-                      <th scope="col" className="px-6 py-4">
-                        Calories
-                      </th>
-                      <th scope="col" className="px-6 py-4">
-                        Meal
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {data.length > 0
-                      ? data.map((ele: any, i) => (
-                          <tr
-                            key={i}
-                            className="border-b dark:border-neutral-500"
-                          >
-                            <td className="whitespace-nowrap px-6 py-4 font-medium">
-                              {ele.title}
-                            </td>
-                            <td className="whitespace-nowrap px-6 py-4">
-                              {ele.ProtienGain}
-                            </td>
-                            <td className="whitespace-nowrap px-6 py-4">
-                              {ele.carbs}
-                            </td>
-                            <td className="whitespace-nowrap px-6 py-4">
-                              {ele.calories}
-                            </td>
-                            <td className="whitespace-nowrap px-6 py-4">
-                              {ele.meal[0]},{ele.meal[1]},{ele.meal[2]}
-                            </td>
-                          </tr>
+        <div className="grid grid-cols-2 gap-4 mx-auto">
+          {data.length <= 0 ? (
+            <h1>No Data Found </h1>
+          ) : (
+            data &&
+            data.map((el: any, i) => (
+              <div
+               
+                className= "w-96 mb-10 mx-auto flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+              >
+                <img
+                  className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+                  src={el.image|| el.exercise[0]}
+                  alt=""
+                />
+                <div className="flex flex-col justify-between p-4 leading-normal">
+                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    {el.title} - {el.Targetbodypart}
+                  </h5>
+                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                    {
+                        el.exercise.map((el:any)=> (
+                           <li className="text-left">
+                            {el}
+                           </li>
                         ))
-                      : null}
-                  </tbody>
-                </table>
+                    }
+                  </p>
+                  <p className="text-left">Cardio:{el.cardio}</p>
+                </div>
               </div>
-            </div>
-          </div>
+            ))
+          )}
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default ExeUser;

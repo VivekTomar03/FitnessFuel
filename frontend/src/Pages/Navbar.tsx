@@ -1,8 +1,15 @@
 import React from "react";
 import Homeui from "./Middle/Homeui";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
-  const name = localStorage.getItem("name")
+  const name = localStorage.getItem("name");
+  const navigate = useNavigate();
+  const handlelogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('name');
+   
+  }
   return (
     <div>
       <nav className="bg-gray-800">
@@ -84,8 +91,20 @@ export default function Navbar() {
               </div>
             </div>
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+               
+            <button
+             onClick={handlelogout}
+                  type="button"
+                  className="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                >
+                  <a  style={{ display: !name ? "none" : "block" }} href="/">Logout</a>
+                  {/* <span className="sr-only">View notifications</span> */}
+                  {/* <BellIcon className="h-6 w-6" aria-hidden="true" /> */}
+                  {/* <span>Logout</span> */}
+                </button>
+               
               <div className="relative ml-3">
-                <div>
+                <div className="flex flex-col gap-0">
                   <button
                     type="button"
                     className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
@@ -100,14 +119,32 @@ export default function Navbar() {
                       alt=""
                     />
                   </button>
-                  <span className="text-sky-400 mr-4">{name}</span>
+                  <span
+                 
+                    style={{ display: !name ? "none" : "block" }}
+                    className="text-sky-400 mr-3"
+                  >
+                    {name}
+                  </span>
+                  <button
+                    onClick={() => {navigate("/mylogin")}}
+                    style={{ display: name ? "none" : "block" }}
+                    className="text-white ml-3 mb-0"
+                  >
+                    Login
+                  </button>
+                  {/* <button
+                    style={{ display: !name ? "none" : "block" }}
+                    className="text-white ml-3 pb-3"
+                  >
+                    Logout
+                  </button> */}
                 </div>
               </div>
             </div>
           </div>
         </div>
       </nav>
-
     </div>
   );
 }

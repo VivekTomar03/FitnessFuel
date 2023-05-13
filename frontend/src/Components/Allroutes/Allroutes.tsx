@@ -8,6 +8,7 @@ import PageNotF from "../../Pages/PageNotF";
 import Workout from "../../Pages/Workout";
 import DashBoard from "../../Pages/Dashboard";
 import DietPlan from "../../Pages/DietPlan";
+import ExeUser from "../../Pages/ExeUser";
 
 function Allroutes() {
   return (
@@ -20,6 +21,8 @@ function Allroutes() {
         <Route path="/workout" element={<Workout />}></Route>
         <Route path="/dashboard" element={<DashBoard />}></Route>
         <Route path="/dietplan" element={<DietPlan />}></Route>
+        <Route path="/exeplan" element={<ExeUser />}></Route>
+
       </Routes>
 
     </div>
