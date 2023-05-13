@@ -6,11 +6,12 @@ export default function DietPlan() {
   const [data, setData] = useState([]);
   let dietplan = localStorage.getItem("dietplan");
   console.log(dietplan);
+  let url =" http://localhost:8080"
   useEffect(() => {
     setLoading(true);
 
     axios
-      .get(`http://localhost:8080/${dietplan}`)
+      .get(`${url}/${dietplan}`)
       .then((res) => {
         console.log(res.data);
         setData(res.data);

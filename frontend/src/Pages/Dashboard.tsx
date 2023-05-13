@@ -1,41 +1,38 @@
 import React, { useState, useEffect } from "react";
 import logo from "../image/logo 2.png";
+let data:any = localStorage.getItem("macros")
+let valadd:any =  localStorage.getItem("value")
 const DashBoard = () => {
-  const [value, setValue] = useState<string>("");
-  const [macro, setMacro] = useState<number>(0);
+  
+  
+  const [value, setValue] = useState<string>("Choose Option");
+  const [macro, setMacro] = useState<number>(+data || 0);
+  
 
-  //   let obj1: any = {
-  //     exc: value,
-  //     diet: "beginnersdiet",
-  //   };
-  //   let obj2: any = {
-  //     exc: value,
-  //     diet: "intermediatediet",
-  //   };
-  //   let obj3: any = {
-  //     exc: value,
-  //     diet: "expertdiet",
-  //   };
-  //   //   let anc: any = localStorage.getItem("dietplan" || null);
-  //   console.log(JSON.parse(anc));
   useEffect(() => {
+    // setValue(valadd|| "")
     if (value === "beginners") {
       setMacro(1800);
-      //   let a = JSON.stringify(obj1);
+      localStorage.setItem("macros", "1800")
       localStorage.setItem("exeplan", value);
       localStorage.setItem("dietplan", "beginnersdiet");
+      localStorage.setItem("value", "Begginners")
     }
     if (value === "intermediate") {
       setMacro(2500);
       localStorage.setItem("exeplan", value);
-
+      localStorage.setItem("macros", "2500")
       localStorage.setItem("dietplan", "intermediatediet");
+      localStorage.setItem("value", "Intermediate")
+
     }
     if (value === "expert") {
       setMacro(3000);
       localStorage.setItem("exeplan", value);
-
+      localStorage.setItem("macros", "3000")
       localStorage.setItem("dietplan", "expertdiet");
+      localStorage.setItem("value", "Expert")
+      
     }
   }, [value]);
 
@@ -72,11 +69,11 @@ const DashBoard = () => {
             name=""
             id=""
             style={{ marginTop: "20px" }}
-            onChange={(e: any) => setValue(e.target.value)}
+            onChange={(e: any) => setValue(  e.target.value)}
             // value={value}
             className="border-2 border-black-500 py-2 px-8"
           >
-            <option value="">Choose Option</option>
+            <option value="">{valadd || value} </option>
             <option value="beginners">Begginers</option>
             <option value="intermediate">Intermediate</option>
             <option value="expert">Expert</option>
