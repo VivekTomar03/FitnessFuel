@@ -3,9 +3,11 @@ import SimWork from "./Middle/SimWork";
 import Bmichart from "./Bmichart";
 import MacroChart from "./MacroChart";
 import axios from "axios";
-import LegWork from "./Middle/LegWork";
-import PushUp from "./Middle/PushUp";
-import GirlsEx from "./Middle/GirlsEx";
+// import LegWork from "./Middle/LegWork";
+// import PushUp from "./Middle/PushUp";
+
+
+
 export interface macroobj {
   title: string;
   protine: number;
@@ -219,8 +221,39 @@ export default function Workout() {
         </div>
       </div>
       <SimWork />
-      <LegWork />
-      <PushUp />
+      <div>
+      <div className="grid grid-cols-1 md:grid-cols-4 w-5/6 mx-auto gap-4 mt-5">
+        <div className="hover:bg-grey">
+          <img src="https://hips.hearstapps.com/hmg-prod/images/workouts/2016/02/frogjump-1455820924.gif" />
+        </div>
+        <div className="hover:bg-grey">
+          <img src="https://hips.hearstapps.com/hmg-prod/images/workouts/2016/12/bandoneleghiphinge-1480689468.gif?resize=640:*" />
+        </div>
+        <div className="hover:bg-grey">
+          <img src="https://hips.hearstapps.com/hmg-prod/images/workouts/2016/12/bandpullapart-1480689234.gif?resize=640:*" />
+        </div>
+        <div className="hover:bg-grey">
+          <img src="https://hips.hearstapps.com/hmg-prod/images/workouts/2016/12/bandsplitthruster-1480692778.gif?resize=640:*" />
+        </div>
+      </div>
+    </div>
+      {/* <PushUp /> */}
+      <div>
+      <div className="grid grid-cols-1 md:grid-cols-4 w-5/6 mx-auto gap-4 mt-5">
+        <div className="hover:bg-grey">
+          <img src="https://hips.hearstapps.com/hmg-prod/images/pushup-1462808858.gif" />
+        </div>
+        <div className="hover:bg-grey">
+          <img src="https://hips.hearstapps.com/hmg-prod/images/workouts/2016/04/tpushup-1461693226.gif" />
+        </div>
+        <div className="hover:bg-grey">
+          <img src="https://hips.hearstapps.com/hmg-prod/images/workouts/2016/08/supermandeadstoptosuperman-1472153653.gif" />
+        </div>
+        <div className="hover:bg-grey">
+          <img src="https://hips.hearstapps.com/hmg-prod/images/workouts/2016/03/pushupandrow-1457101819.gif" />
+        </div>
+      </div>
+    </div>
       {/* <GirlsEx /> */}
     </div>
   );
