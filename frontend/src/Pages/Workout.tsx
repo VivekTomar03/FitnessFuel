@@ -3,6 +3,9 @@ import SimWork from "./Middle/SimWork";
 import Bmichart from "./Bmichart";
 import MacroChart from "./MacroChart";
 import axios from "axios";
+import LegWork from "./Middle/LegWork";
+import PushUp from "./Middle/PushUp";
+import GirlsEx from "./Middle/GirlsEx";
 export interface macroobj {
   title: string;
   protine: number;
@@ -215,6 +218,9 @@ export default function Workout() {
         </div>
       </div>
       <SimWork />
+      <LegWork />
+      <PushUp />
+      {/* <GirlsEx /> */}
     </div>
   );
 }
