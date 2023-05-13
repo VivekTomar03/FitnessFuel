@@ -1,38 +1,33 @@
 import React, { useState, useEffect } from "react";
 import logo from "../image/logo 2.png";
-let data:any = localStorage.getItem("macros")
-let valadd:any =  localStorage.getItem("value")
+let data: any = localStorage.getItem("macros");
+let valadd: any = localStorage.getItem("value");
 const DashBoard = () => {
-  
-  
   const [value, setValue] = useState<string>("Choose Option");
   const [macro, setMacro] = useState<number>(+data || 0);
-  
 
   useEffect(() => {
     // setValue(valadd|| "")
     if (value === "beginners") {
       setMacro(1800);
-      localStorage.setItem("macros", "1800")
+      localStorage.setItem("macros", "1800");
       localStorage.setItem("exeplan", value);
       localStorage.setItem("dietplan", "beginnersdiet");
-      localStorage.setItem("value", "Begginners")
+      localStorage.setItem("value", "Begginners");
     }
     if (value === "intermediate") {
       setMacro(2500);
       localStorage.setItem("exeplan", value);
-      localStorage.setItem("macros", "2500")
+      localStorage.setItem("macros", "2500");
       localStorage.setItem("dietplan", "intermediatediet");
-      localStorage.setItem("value", "Intermediate")
-
+      localStorage.setItem("value", "Intermediate");
     }
     if (value === "expert") {
       setMacro(3000);
       localStorage.setItem("exeplan", value);
-      localStorage.setItem("macros", "3000")
+      localStorage.setItem("macros", "3000");
       localStorage.setItem("dietplan", "expertdiet");
-      localStorage.setItem("value", "Expert")
-      
+      localStorage.setItem("value", "Expert");
     }
   }, [value]);
 
@@ -45,12 +40,13 @@ const DashBoard = () => {
   return (
     <div>
       <img
+        style={{ marginTop: "3px" }}
         src="https://github.com/VivekTomar03/FitnessFuel/assets/106812942/33161022-63c8-4e7f-98d2-b0ce6dd1716a"
         alt=""
         width="100%"
       />
       <div
-        className="flex justify-center gap-20px border-4 border-teal-600 border-solid w-fit m-auto mb-8 
+        className="grid grid-cols-1 md:grid-cols-3 justify-center gap-20px border-4 border-teal-600 border-solid w-fit m-auto mb-8 
           bg-[url('https://thumbs.dreamstime.com/b/athletic-man-training-biceps-gym-to-use-as-banner-athletic-muscular-man-training-biceps-dumbbells-gym-to-use-as-118413845.jpg')]"
       >
         <div
@@ -69,7 +65,7 @@ const DashBoard = () => {
             name=""
             id=""
             style={{ marginTop: "20px" }}
-            onChange={(e: any) => setValue(  e.target.value)}
+            onChange={(e: any) => setValue(e.target.value)}
             // value={value}
             className="border-2 border-black-500 py-2 px-8"
           >
@@ -102,7 +98,7 @@ const DashBoard = () => {
               backgroundColor: "#424242",
             }}
           >
-           <a href="/exeplan"> See Your Exercise Schedule</a>
+            <a href="/exeplan"> See Your Exercise Schedule</a>
           </button>
         </div>
       </div>
