@@ -1,5 +1,7 @@
 import React from "react";
-
+import {BsFacebook,BsInstagram}  from 'react-icons/bs'
+import {MdEmail} from "react-icons/md"
+import {FaInstagramSquare} from "react-icons/fa"
 export default function Footer() {
   return (
     <div>
@@ -169,21 +171,27 @@ export default function Footer() {
               <div className="flex sm:justify-center xl:justify-start">
                 <a
                   href=""
-                  className="w-8 h-8 border border-2 border-gray-400 rounded-full text-center py-1 text-gray-600 hover:text-white hover:bg-blue-600 hover:border-blue-600"
+                  className="w-8 h-8  text-center py-1   hover:bg-blue-600 hover:border-blue-600"
                 >
-                  <i className="fab fa-facebook"></i>
+                  <BsFacebook size="30px"/>
                 </a>
                 <a
                   href=""
-                  className="w-8 h-8 border border-2 border-gray-400 rounded-full text-center py-1 ml-2 text-gray-600 hover:text-white hover:bg-blue-400 hover:border-blue-400"
+                  className="w-8 h-8  text-center py-1   hover:bg-blue-600 hover:border-blue-600"
                 >
-                  <i className="fab fa-twitter"></i>
+                  <MdEmail size="30px"/>
                 </a>
                 <a
                   href=""
-                  className="w-8 h-8 border border-2 border-gray-400 rounded-full text-center py-1 ml-2 text-gray-600 hover:text-white hover:bg-red-600 hover:border-red-600"
+                  className="w-8 h-8  text-center py-1   hover:bg-blue-600 hover:border-blue-600"
                 >
-                  <i className="fab fa-google-plus-g"></i>
+                  <BsInstagram/>
+                </a>
+                <a
+                  href=""
+                  className="w-8 h-8  text-center py-1   hover:bg-blue-600 hover:border-blue-600"
+                >
+                  <BsInstagram/>
                 </a>
               </div>
             </div>
