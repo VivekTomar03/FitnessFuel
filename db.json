@@ -31,9 +31,9 @@
             {
             "title":"DAY3",
             "Targetbodypart":"Rest",
-            "exercise": ["https://www.benderfitness.com/wp-content/uploads/2014/09/20130715-222052.jpg"],
-            "cardio" :"0min" 
-           
+            "exercise": ["Rest"],
+            "cardio" :"0min" ,
+            "image":"https://www.benderfitness.com/wp-content/uploads/2014/09/20130715-222052.jpg"
         },
           {
             "title":"DAY4",
@@ -51,11 +51,11 @@
           },
           {
             "title":"DAY6",
-             "Targetbodypart":"Rest",
-            "exercise": ["https://www.benderfitness.com/wp-content/uploads/2014/09/20130715-222052.jpg"],
-            "cardio" :"0min" 
-            
-          }
+            "Targetbodypart":"Rest",
+            "exercise": ["Rest"],
+            "cardio" :"0min" ,
+            "image":"https://www.benderfitness.com/wp-content/uploads/2014/09/20130715-222052.jpg"
+        }
         
         
     ],

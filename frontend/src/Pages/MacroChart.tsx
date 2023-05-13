@@ -72,10 +72,13 @@ const CustomizedLegend = (props: any) => {
   );
 };
 export default function MacroChart({ marcores, food }: any) {
+  let protine =  marcores.protine
+  let fat = marcores.fat
+  let carbs = marcores.carbs
   const data01 = [
-    { name: "Protine(0-15)", value: marcores.protine },
-    { name: "FAT(16-30)", value: marcores.fat },
-    { name: "CARBS(30+)", value: marcores.carbs },
+    { name: "Protien", value:protine},
+    { name: "FAT", value: fat },
+    { name: "CARBS", value: carbs},
   ];
   console.log(marcores);
 

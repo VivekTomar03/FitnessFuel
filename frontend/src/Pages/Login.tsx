@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import logo from "../image/logo 3.png"
-import {Link } from "react-router-dom"
+import {Link, useNavigate } from "react-router-dom"
 import axios from 'axios';
 interface userdetails{
   email: string,
@@ -16,7 +16,7 @@ function Login() {
 // const [email,setEmail]=useState<string>("")
 // const [password,setPasword]=useState<string>("")
 const [formData, setFormData] = useState<userdetails>(obj);
-
+const navigate = useNavigate()
 const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
   const { name, value } = e.target;
   // console.log(name,value)
@@ -31,6 +31,7 @@ const handleSubmit=(e:React.FormEvent<HTMLFormElement> )=>{
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('name', res.data.name);
       alert(res.data.msg);
+         navigate("/")
     })
     .catch((err) => alert("Wrong Credentials"));
 
