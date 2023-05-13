@@ -6,7 +6,7 @@ export default function DietPlan() {
   const [data, setData] = useState([]);
   let dietplan = localStorage.getItem("dietplan");
   console.log(dietplan);
-  let url ="https://weary-ruby-coat.cyclic.app"
+  let url ="https://weary-ruby-coat.cyclic.app/" //dharmik
   useEffect(() => {
     setLoading(true);
 
@@ -22,6 +22,10 @@ export default function DietPlan() {
         setLoading(false);
       });
   }, [dietplan]);
+
+
+  
+
 
   if (loading) {
     return (

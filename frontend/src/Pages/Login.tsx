@@ -28,10 +28,18 @@ const handleSubmit=(e:React.FormEvent<HTMLFormElement> )=>{
     axios
     .post(`https://weary-ruby-coat.cyclic.app/user/login`,formData)
     .then((res) => {
+      console.log(res);
+       if(res.data.token){
+       
+      
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('name', res.data.name);
       alert(res.data.msg);
          navigate("/")
+       }
+       else {
+           alert("User not found")
+       }
     })
     .catch((err) => alert("Wrong Credentials"));
 
