@@ -67,7 +67,8 @@ userRouter.post("/login", async (req, res) => {
           res.send({
             msg: "user login successfully",
             token,
-            name: data.name
+            name: data.name,
+            id:data._id
             
           });
         } else {

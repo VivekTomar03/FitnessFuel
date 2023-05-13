@@ -1,28 +1,34 @@
 import React, { useState, useEffect } from "react";
 import logo from "../image/logo 2.png";
+import axios from "axios";
+import { Link } from "react-router-dom";
 let data:any = localStorage.getItem("macros")
 let valadd:any =  localStorage.getItem("value")
+let id:any = localStorage.getItem("id") 
+let token = localStorage.getItem("token")
+let myplan = localStorage.getItem("plan")
 const DashBoard = () => {
+  let dietdat = myplan==undefined?"Begginners":myplan
   
-  
-  const [value, setValue] = useState<string>("Choose Option");
+  const [value, setValue] = useState<string>(dietdat);
   const [macro, setMacro] = useState<number>(+data || 0);
   
-
+ 
   useEffect(() => {
     // setValue(valadd|| "")
-    if (value === "beginners") {
+    if (value == "beginners") {
+      console.log("insdie if condition")
       setMacro(1800);
       localStorage.setItem("macros", "1800")
       localStorage.setItem("exeplan", value);
-      localStorage.setItem("dietplan", "beginnersdiet");
+      localStorage.setItem("dietplan", value+"diet");
       localStorage.setItem("value", "Begginners")
     }
     if (value === "intermediate") {
       setMacro(2500);
       localStorage.setItem("exeplan", value);
       localStorage.setItem("macros", "2500")
-      localStorage.setItem("dietplan", "intermediatediet");
+      localStorage.setItem("dietplan", value+"diet");
       localStorage.setItem("value", "Intermediate")
 
     }
@@ -30,12 +36,29 @@ const DashBoard = () => {
       setMacro(3000);
       localStorage.setItem("exeplan", value);
       localStorage.setItem("macros", "3000")
-      localStorage.setItem("dietplan", "expertdiet");
+      localStorage.setItem("dietplan", value+"diet");
       localStorage.setItem("value", "Expert")
       
     }
-  }, [value]);
+     localStorage.setItem("plan", value)
 
+
+  }, [value, myplan]);
+
+    useEffect(()=> {
+      handleupdateplan() 
+    },[value])
+    const handleupdateplan = ()=> {
+      axios(`https://impossible-seal-coat.cyclic.app/user/update/${id}`, {    //update api req
+         method:"patch",
+         headers:{
+            "Content-Type":"application/json",
+            "Authorization": `Bearer ${token}`
+         },
+         data:{diet:[value]}
+       }).then((res) => console.log(res))
+         .catch((err) => console.log(err))
+     }
   //   console.log(value);
   const stats = [
     { id: 1, name: "Transactions every 24 hours", value: "44 million" },
@@ -73,7 +96,7 @@ const DashBoard = () => {
             // value={value}
             className="border-2 border-black-500 py-2 px-8"
           >
-            <option value="">{valadd || value} </option>
+            <option value=""> {value} </option>
             <option value="beginners">Begginers</option>
             <option value="intermediate">Intermediate</option>
             <option value="expert">Expert</option>
@@ -89,8 +112,9 @@ const DashBoard = () => {
               color: "white",
               backgroundColor: "#424242",
             }}
+             disabled={valadd?false:true}
           >
-            <a href="/dietplan">See Your Diet Plan</a>
+            <Link to="/dietplan">See Your Diet Plan</Link>
           </button>
           <button
             style={{
@@ -102,7 +126,7 @@ const DashBoard = () => {
               backgroundColor: "#424242",
             }}
           >
-           <a href="/exeplan"> See Your Exercise Schedule</a>
+           <Link to="/exeplan"> See Your Exercise Schedule</Link>
           </button>
         </div>
       </div>

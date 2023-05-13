@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import logo from "../image/logo 3.png"
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 interface exer {
     "title":string;
@@ -34,7 +35,7 @@ let obj ={
 
 function Signup() {
 const [data,setData]=useState<userdetails>(obj)
-
+const navigate = useNavigate()
 const handleChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
   const { name, value,type } = e.target;
   const val = type == "number" ? +value : value;
@@ -50,8 +51,11 @@ const handleSubmit=(e:React.FormEvent<HTMLFormElement>)=>{
     }
     console.log(data)
    axios
-   .post("https://weary-ruby-coat.cyclic.app/user/register",data)
-   .then((res)=>{console.log(res.data.msg)})
+   .post("https://impossible-seal-coat.cyclic.app/user/register",data)
+   .then((res)=>{
+    console.log(res.data.msg)
+       navigate("/mylogin")
+  })
    .catch((err)=>{console.log("User Already exist")})
 
    setData(obj)

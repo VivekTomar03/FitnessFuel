@@ -1,6 +1,6 @@
 import React from "react";
 import Homeui from "./Middle/Homeui";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const name = localStorage.getItem("name");
@@ -8,7 +8,8 @@ export default function Navbar() {
   const handlelogout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('name');
-   
+  //  localStorage.removeItem("value")
+   localStorage.removeItem("dietplan")
   }
   return (
     <div>
@@ -57,36 +58,36 @@ export default function Navbar() {
             </div>
             <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
               <div className="flex flex-shrink-0 items-center">
-                <a href="/">
+                <Link to="/">
                   <img
                     className="block h-8 w-auto lg:hidden "
                     src="https://user-images.githubusercontent.com/106812942/237722737-7771a3f0-4138-4ca9-b511-e480c5a25934.png"
                     alt="Your Company"
                   />
-                </a>
-                <a href="/">
+                </Link>
+                <Link to="/">
                   <img
                     className="hidden h-8 w-auto lg:block"
                     src="https://user-images.githubusercontent.com/106812942/237722737-7771a3f0-4138-4ca9-b511-e480c5a25934.png"
                     alt="Your Company"
                   />
-                </a>
+                </Link>
               </div>
               <div className="hidden sm:ml-6 sm:block">
                 <div className="flex space-x-4">
                   <a
-                    href="/dashboard"
+                   href="/dashboard"
                     className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
                     aria-current="page"
                   >
                     Dashboard
                   </a>
-                  <a
-                    href="/workout"
+                  <Link
+                    to="/workout"
                     className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                   >
                     Workout
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

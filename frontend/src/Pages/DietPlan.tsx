@@ -1,29 +1,47 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+// let id:any = localStorage.getItem("id") 
+let token = localStorage.getItem("token")
 
 export default function DietPlan() {
   const [loading, setLoading] = useState<boolean>(false);
   const [data, setData] = useState([]);
+  const[userplan, setuserplan] = useState<string>("")
   let dietplan = localStorage.getItem("dietplan");
-  console.log(dietplan);
-  let url ="https://weary-ruby-coat.cyclic.app/" //dharmik
+  // console.log(dietplan);
+  let url ="https://impossible-seal-coat.cyclic.app" 
   useEffect(() => {
     setLoading(true);
-
+     axios.get(`https://impossible-seal-coat.cyclic.app/user`, {
+      headers:{
+        "Content-Type":"application/json",
+        "Authorization": `Bearer ${token}`
+     }
+     })
+     .then((res) =>{
+      // console.log(res.data.data)
+        res.data.data.map((el:any) => {
+             console.log(el);
+             setuserplan(el.diet[0]+"diet")
+             return 
+        })
+     })
+     .catch((err) => console.log(err))
     axios
       .get(`${url}/${dietplan}`)
       .then((res) => {
-        console.log(res.data);
+        console.log(res.data, "diet data");
         setData(res.data);
         setLoading(false);
       })
       .catch((err) => {
         console.log(err);
+        // alert("please select plan first")
         setLoading(false);
       });
-  }, [dietplan]);
+  }, []);
 
-
+  console.log(userplan, "userplan")
   
 
 
@@ -65,9 +83,9 @@ export default function DietPlan() {
       <div>
         <h1 className="text-6xl m-5">
           Diet For{" "}
-          {dietplan == "beginnersdiet"
+          {dietplan  == "beginnersdiet"
             ? "Beginners"
-            : dietplan == "intermediatediet"
+            : dietplan  == "intermediatediet"
             ? "Intermediate"
             : "Expert"}
         </h1>

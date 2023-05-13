@@ -26,15 +26,16 @@ const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
 const handleSubmit=(e:React.FormEvent<HTMLFormElement> )=>{
     e.preventDefault()
     axios
-    .post(`https://weary-ruby-coat.cyclic.app/user/login`,formData)
+    .post(`https://impossible-seal-coat.cyclic.app/user/login`,formData)
     .then((res) => {
       console.log(res);
        if(res.data.token){
-       
-      
+        dataset(res.data.token)
+       localStorage.setItem("id", res.data.id)
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('name', res.data.name);
       alert(res.data.msg);
+      
          navigate("/")
        }
        else {
@@ -47,6 +48,23 @@ const handleSubmit=(e:React.FormEvent<HTMLFormElement> )=>{
   setFormData(obj);
 }
 
+const dataset = (token:any)=> {
+  axios.get(`https://impossible-seal-coat.cyclic.app/user`, {
+    headers:{
+      "Content-Type":"application/json",
+      "Authorization": `Bearer ${token}`
+   }
+   })
+   .then((res) =>{
+    // console.log(res.data.data)
+      res.data.data.map((el:any) => {
+           console.log(el.diet[0], "from dash board");
+            localStorage.setItem("plan" , el.diet[0]||"beginners")
+           return 
+      })
+   })
+   .catch((err) => console.log(err))
+}
   return (
     <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
   <div className="sm:mx-auto sm:w-full sm:max-w-sm">

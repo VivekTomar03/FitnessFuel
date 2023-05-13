@@ -6,7 +6,7 @@ export default function Homeui() {
     <div>
       <div className="w-5/3  mx-20">
         <div className="grid grid-cols-1 md:grid-cols-2 w-full ">
-          <div className="p-20">
+          <div className="p-20 flex flex-col items-center">
             <h1 className="text-5xl font-bold">YOGAFLEX TO SHAPE YOUR BODY</h1>
             <p className="mt-5">
               Want to eat more mindfully? Track meals, learn about your habits,
@@ -16,7 +16,8 @@ export default function Homeui() {
             <div className="w-64">
               <button
                 type="submit"
-                className="mt-8 ml-9  flex w-full justify-center rounded-md bg-blue-600  px-9 py-5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="my-5 mx-auto  block content-center w-max  rounded-md bg-blue-600  px-9 py-5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600
+                sm:mx-auto w-full block content-center"
               >
                 START FOR FREE
               </button>
