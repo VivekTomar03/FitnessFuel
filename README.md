@@ -23,6 +23,16 @@ A Full Stack , Collaborative project built by a team of 4 executed in 2 days.
 - Mongoose
 - MongoDb Atlas
 
+## Features
+
+- Nutrition and Calorie Tracking: FitnessFuel simplifies nutrition and calorie tracking by providing you with the data you need and helping     you make sense of it all.
+
+- Exercise and Diet Plans: FitnessFuel provides exercise and diet plans that are tailored to your needs, whether you're a beginner,             intermediate, or expert.
+
+- User Authentication: FitnessFuel has a user authentication system that allows you to create an account, log in, and log out.
+
+- Dashboard: The dashboard provides an overview of your nutrition and exercise data, making it easy to track your progress.
+
 ## Snapshots :camera:
 * Landing page (Home page) 
 
@@ -76,4 +86,6 @@ A Full Stack , Collaborative project built by a team of 4 executed in 2 days.
 - 👤 [Dharmik puri Goswami](https://github.com/dharmikpuri)
 -     Key-Responsibility ->Login Signup Page
 
+## Conclusion
 
+FitnessFuel is a powerful tool that simplifies nutrition and exercise tracking. It is built with modern technologies, making it fast, reliable, and easy to use.
